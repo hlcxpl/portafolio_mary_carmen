@@ -1,0 +1,187 @@
+/* Estilos comunes */
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header, section {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    transition: color 0.5s ease;
+}
+
+ul:not(.navbar-nav) {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul:not(.navbar-nav) li {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: move;
+    /* Indica que el elemento es draggable */
+}
+
+a {
+    transition: color 0.5s ease;
+    text-decoration: none;
+    /* Eliminar subrayado */
+}
+
+#contactForm .form-group {
+    margin-bottom: 15px;
+}
+
+#contactForm button {
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle img {
+    cursor: pointer;
+    width: 45px;
+    /* Tamaño ajustado */
+    height: 45px;
+    /* Tamaño ajustado */
+    margin-left: 20px;
+    /* Espaciado a la derecha */
+}
+
+/* Estilos para el navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.7);
+    /* Fondo transparente tipo vidrio */
+    backdrop-filter: blur(10px);
+    /* Efecto de desenfoque */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Borde inferior */
+    transition: background-color 0.5s ease;
+    z-index: 10;
+    /* Asegurar que el navbar esté siempre en el frente */
+}
+
+.navbar .nav-link {
+    margin: 0 10px;
+    /* Espacio entre enlaces */
+    transition: color 0.3s ease;
+    padding: 0;
+    /* Eliminar padding */
+    background: none;
+    /* Quitar background */
+    border: none;
+    /* Quitar bordes */
+}
+
+.navbar .nav-link:hover {
+    color: #007bff;
+}
+
+/* Tema claro */
+body.light-theme {
+    background-color: #f0f2f5;
+    color: #343a40;
+}
+
+body.light-theme header, body.light-theme section {
+    background-color: #ffffff;
+    border: 1px solid #708090;
+    /* Línea delgada color slate */
+}
+
+body.light-theme h1, body.light-theme h2 {
+    color: #007bff;
+}
+
+body.light-theme ul:not(.navbar-nav) li {
+    background-color: #e9ecef;
+    border: 1px solid #708090;
+    /* Línea delgada color slate */
+}
+
+body.light-theme ul:not(.navbar-nav) li:hover {
+    background-color: #d1d1d1;
+}
+
+body.light-theme a {
+    color: #007bff;
+}
+
+body.light-theme #contactForm button:hover {
+    background-color: #0056b3;
+}
+
+body.light-theme .navbar {
+    background: rgba(255, 255, 255, 0.7);
+    /* Fondo transparente tipo vidrio */
+}
+
+body.light-theme .navbar .nav-link {
+    color: #000000;
+    /* Letras negras */
+}
+
+/* Tema oscuro */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-theme header, body.dark-theme section {
+    background-color: #1e1e1e;
+}
+
+body.dark-theme h1, body.dark-theme h2 {
+    color: #bb86fc;
+}
+
+body.dark-theme ul:not(.navbar-nav) li {
+    background-color: #333333;
+}
+
+body.dark-theme ul:not(.navbar-nav) li:hover {
+    background-color: #444444;
+}
+
+body.dark-theme a {
+    color: #bb86fc;
+}
+
+body.dark-theme #contactForm button:hover {
+    background-color: #3700b3;
+}
+
+body.dark-theme .navbar {
+    background: rgba(0, 0, 0, 0.7);
+    /* Fondo transparente tipo vidrio */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    /* Borde inferior */
+}
+
+body.dark-theme .navbar .nav-link {
+    color: #ffffff;
+    /* Letras blancas */
+}
+
+/* Estilos personalizados para el slider */
+.hobby-slider {
+    margin: 20px 0;
+}
+
+.hobby-slider img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-link,
+.navbar .nav-link:hover {
+    background: none !important;
+    border: none !important;
+    text-decoration: none !important;
+}

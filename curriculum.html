@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p,
+        ul,
+        li {
+            text-align: justify;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        ul {
+            text-align: justify;
+            margin: 20px auto;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        table {
+            margin: 20px auto;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        table th {
+            text-align: left;
+            background-color: #f4f4f4;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #content {
+            padding: 5mm;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button-container">
+        <button id="download-pdf">Descargar PDF</button>
+        <button id="go-back">Volver al Index</button>
+    </div>
+    <div id="content">
+        <h1>Mary Carmen Gonzalez</h1>
+        <img src="img/profile.jpg" width="100px" height="100px">
+        <h5>Me gustaría poner en práctica todo lo aprendido en el Bootcamp, y por medio de mis fortalezas buscar apoyar
+            en
+            el área de tecnología.</h5>
+        <ul>
+            <h2>Contacto</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha de nacimiento:</th>
+                        <th>Dirección:</th>
+                        <th>Teléfono:</th>
+                        <th>RUT:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09-09-1991</td>
+                        <td>Calle Concepción, Chile</td>
+                        <td>+569 9999999</td>
+                        <td>26.777.777-7</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ul>
+        <h2>Antecedentes Académicos</h2>
+        <p>2023: Bootcamp en Análisis de Datos dictado por CDI Chile. (Excel, bases de datos, Power BI, y SQL).</p>
+        <p>2010-2015: Escuela Nacional de Administración y Hacienda Pública (ENAHP), Licenciada en Ciencias Fiscales
+            mención
+            Finanzas Públicas.</p>
+        <p>2007-2010: Escuela Técnica Popular María Auxiliadora. Técnico Medio en Administración Financiera.</p>
+        <h2>Antecedentes Laborales</h2>
+        <p>Agosto 2023- Actualidad: Operadora de máquinas en Centro de Fotocopiado, Sede Duoc.
+        <ul>
+            <li>Operadora de máquinas de fotocopiado.</li>
+        </ul>
+        </p>
+        <p>Mayo 2020- julio 2023: Emprendimiento propio de comida china al estilo venezolano, El Guerrero Xian.
+        <ul>
+            <li>Atención al público, realizar compras y logística del local.</li>
+        </ul>
+        </p>
+        <p>Noviembre 2019- abril 2020: Secretaria de Postgrado, Universidad del Desarrollo.
+        <ul>
+            <li>Realizar órdenes de compra usando el sistema LISA.</li>
+            <li>Agendar asistencia de alumnos usando bases de datos en Excel.</li>
+        </ul>
+        </p>
+        <p>Julio 2018- julio 2019: Asistente Administrativo, Rancho Ocho S.P.A, Concepción.
+        <ul>
+            <li>Controlar el stock de mercadería mediante el Sistema Softland y Excel.</li>
+            <li>Ingresar facturas y apoyo en caja usando el Sistema Softland.</li>
+            <li>Realizar órdenes de compra e inventarios.</li>
+        </ul>
+        </p>
+        <p>Agosto 2016- diciembre 2017: Analista de Reportes en Directv Venezuela.
+        <ul>
+            <li>Realizar reportes de gestión de Atención al cliente.</li>
+            <li>Control de indicadores, KPI´S.</li>
+        </ul>
+        </p>
+        <h2>Logros</h2>
+        <ul>
+            <li>Mejoras en los reportes del área de Atención al Cliente.</li>
+            <li>Ordenar bases de datos de clientes deudores.</li>
+        </ul>
+        <p>Link LinkedIn: <a href="https://www.linkedin.com/in/mary-gonzalez-465a30188" target="_blank">LinkedIn</a></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script>
+        document.getElementById('download-pdf').addEventListener('click', function () {
+            html2canvas(document.getElementById('content')).then(function (canvas) {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgData = canvas.toDataURL('image/png');
+                const imgWidth = 200; // Adjust width for margin
+                const pageHeight = 287; // Adjust height for margin
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 5; // Start position for the first page
+
+                pdf.addImage(imgData, 'PNG', 5, position, imgWidth, imgHeight); // Adjust position for margin
+                heightLeft -= pageHeight;
+
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 5, position, imgWidth, imgHeight); // Adjust position for margin
+                    heightLeft -= pageHeight;
+                }
+                pdf.save('curriculum.pdf');
+            });
+        });
+
+        document.getElementById('go-back').addEventListener('click', function () {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+
+</html>
