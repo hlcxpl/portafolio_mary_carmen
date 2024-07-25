@@ -73,3 +73,19 @@ items.forEach((item) => {
   item.addEventListener("dragover", handleDragOver, false);
   item.addEventListener("drop", handleDrop, false);
 });
+
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+    const offset = 60; // Ajuste para el desplazamiento del navbar
+
+    window.scrollTo({
+      top: targetElement.offsetTop - offset,
+      behavior: "smooth",
+    });
+  });
+});
