@@ -185,3 +185,20 @@ body.dark-theme .navbar .nav-link {
     border: none !important;
     text-decoration: none !important;
 }
+
+/* Agregar margen superior a las secciones */
+section {
+    margin-top: 100px;
+    /* Ajusta este valor según tus necesidades */
+}
+
+header {
+    margin-top: 100px;
+    /* Ajusta este valor según tus necesidades */
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}

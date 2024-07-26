@@ -81,7 +81,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     const targetId = this.getAttribute("href");
     const targetElement = document.querySelector(targetId);
-    const offset = 60; // Ajuste para el desplazamiento del navbar
+    const offset = 100; // Ajuste para el desplazamiento del navbar
 
     window.scrollTo({
       top: targetElement.offsetTop - offset,
